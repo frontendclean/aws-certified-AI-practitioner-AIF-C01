@@ -1,0 +1,1 @@
+# aws-certified-AI-practitioner-AIF-C01
