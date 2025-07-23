@@ -21,7 +21,7 @@ Este repositório foi criado para ajudar quem está se preparando para a certifi
 
 ---
 
-## O que estudar (+15 tópicos)
+## O que estudar (+20 tópicos)
 
 ### Menu 
 
@@ -40,6 +40,11 @@ Este repositório foi criado para ajudar quem está se preparando para a certifi
 - [Diferença entre supervisionado e não supervisionado](#diferença-entre-supervisionado-e-não-supervisionado)
 - [Aprendizagem por Reforço](#aprendizagem-por-reforço)
 - [Diferença entre Supervisionado, Não supervisionado e Por reforço](#diferença-entre-supervisionado-não-supervisionado-e-por-reforço)
+- [Casos de Uso](#casos-de-uso)
+- [Tecnologias ML Apropriadas](#tecnologias-ml-apropriadas)
+- [Ciclo de Vida do Desenvolvimento de ML](#ciclo-de-vida-do-desenvolvimento-de-ml)
+- [Serviços para cada etapa do ciclo de vida](#serviços-para-cada-etapa-do-ciclo-de-vida)
+- [Noções básicas de ética e viés algorítmico](#noções-básicas-de-ética-e-viés-algorítmico)
 
 ---
 
@@ -664,6 +669,260 @@ A AWS oferece suporte a Aprendizagem por Reforço via:
 | Supervisionado | Sim | Sim (resposta certa) | Prever resultado |
 | Não supervisionado | Não | Não | Descobrir padrões |
 | Por reforço | Não direto | Sim (recompensa) | Tomar decisões sequenciais |
+
+---
+
+### Casos de Uso
+
+Casos de uso (use cases) são situações reais ou cenários específicos onde uma solução, como IA ou Machine Learning, pode ser aplicada para resolver um problema ou gerar valor.
+
+Em outras palavras: é "para que serve essa tecnologia, na prática".
+
+#### Para que serve
+
+  - Guiar decisões de negócios sobre onde aplicar IA
+  - Demonstrar valor real da tecnologia
+  - Identificar oportunidades de automação ou melhoria
+  - Ajudar no planejamento de projetos com IA
+  - Servir de base para escolha de serviços na AWS
+
+#### Exemplos
+
+| Área | Caso de uso | Solução de IA envolvida |
+|:------:|:------:|:------:|
+| Saúde | Diagnóstico por imagem | Visão computacional |
+| Marketing | Recomendação de produtos | Machine Learning supervisionado |
+| Finanças | Detecção de fraudes | Aprendizado não supervisionado |
+| Atendimento | Chatbots inteligentes | Processamento de linguagem natural (PLN) |
+| Indústria | Manutenção preditiva | Machine Learning + sensores (IoT) |
+| Transporte | Roteamento de entregas | Modelos preditivos e RL |
+| Educação | Tutores personalizados | LLMs e IA adaptativa |
+
+#### Vantagens
+
+  - Foco em resultados reais
+    - Evita uso de IA só por modismo; foca em resolver problemas concretos.
+  - Facilita a comunicação
+    - Ajuda equipes técnicas e de negócios a se alinharem com clareza.
+  - Ajuda na escolha de tecnologias
+    - Guia a seleção de ferramentas e serviços (ex: SageMaker, Comprehend, Rekognition).
+  - Permite medir impacto
+    - Você pode acompanhar métricas (ex: tempo economizado, redução de custos, aumento de receita).
+  - Evita desperdício
+    - Reduz riscos de investir tempo/dinheiro em soluções sem retorno.
+
+---
+
+### Tecnologias ML Apropriadas
+
+Tecnologias ML apropriadas são ferramentas, técnicas ou serviços adequados para resolver um problema específico com Machine Learning, levando em conta fatores como:
+
+  - Tipo de dado (texto, imagem, número, etc.)
+  - Tipo de problema (classificação, regressão, agrupamento, etc.)
+  - Volume de dados
+  - Nível de habilidade da equipe
+  - Tempo e custo disponíveis
+
+#### Para que serve
+
+  - Escolher a melhor abordagem de ML para um caso de uso
+  - Economizar tempo e recursos
+  - Maximizar a performance e precisão do modelo
+  - Evitar sobreengenharia ou escolhas erradas de ferramentas
+
+#### Exemplos
+
+| Cenário | Tecnologia/Serviço | Por que é apropriado? |
+|:------:|:------:|:------:|
+| Classificar sentimentos em comentários | Amazon Comprehend | Serviço de PLN pré-treinado, fácil de usar |
+| Detectar objetos em imagens | Amazon Rekognition | IA pronta para visão computacional |
+| Prever vendas futuras com dados históricos | Amazon Forecast | Serviço de previsão com ML |
+| Criar um modelo personalizado com código | Amazon SageMaker | Plataforma completa para ML personalizado |
+| Análise em tempo real de dados de sensores | Amazon Kinesis + SageMaker | ML com dados em tempo real |
+
+#### Vantagens
+
+  - Agilidade no desenvolvimento
+    - Serviços pré-treinados evitam a necessidade de treinar modelos do zero.
+  - Melhor desempenho
+    - Ferramentas específicas para certos tipos de dado (texto, imagem, tempo) geralmente geram resultados mais precisos.
+  - Custo reduzido
+    - Evita uso de soluções complexas quando uma simples resolveria.
+  - Acessível para equipes com pouca experiência
+    - AWS oferece serviços com pouca ou nenhuma necessidade de código.
+  - Melhor integração com outros sistemas
+    - Tecnologias AWS se integram facilmente com bancos de dados, S3, Lambda, etc.
+
+---
+
+### Ciclo de Vida do Desenvolvimento de ML
+
+É o conjunto de etapas organizadas que guiam o processo de criação, implantação e manutenção de modelos de Machine Learning.
+
+É como um passo a passo para desenvolver uma solução de ML — da ideia até o uso real.
+
+#### Principais Etapas
+
+| Cenário | Tecnologia/Serviço |
+|:------:|:------:|
+| Entendimento do problema | Identificar o objetivo de negócio e o que precisa ser resolvido |
+| Coleta de dados | Buscar dados relevantes (bancos, APIs, sensores, etc.) |
+| Preparação dos dados | Limpeza, transformação e formatação dos dados |
+| Escolha do modelo | Selecionar algoritmo ou serviço de ML adequado |
+| Treinamento | Ensinar o modelo a partir dos dados de entrada |
+| Avaliação | Verificar se o modelo está funcionando bem (ex: acurácia, erro) |
+| Implantação (deploy) | Levar o modelo para produção (usuários ou sistemas usam) |
+| Monitoramento e manutenção | Acompanhar performance, corrigir erros, re-treinar se necessário |
+
+#### Para que serve
+
+  - Garantir que o desenvolvimento de modelos ML seja eficiente e confiável
+  - Organizar o trabalho das equipes envolvidas (negócio, dados, engenharia, IA)
+  - Minimizar riscos técnicos e de negócio
+  - Aumentar a qualidade e precisão dos modelos
+  - Ajudar na repetição e automação de projetos de ML
+
+#### Vantagens
+
+  - Clareza no processo
+    - Cada etapa tem um objetivo claro e bem definido.
+  - Colaboração entre equipes
+    - Permite que profissionais de dados, engenharia e negócios trabalhem em conjunto.
+  - Maior chance de sucesso
+    - Modelos construídos de forma estruturada tendem a performar melhor.
+  - Facilidade para melhorar
+    - Quando um modelo falha, é mais fácil entender em qual etapa ajustar.
+  - Melhor uso dos serviços da AWS
+    - Cada etapa pode ser automatizada ou acelerada com serviços como:
+      - Amazon SageMaker (treinamento, avaliação, deploy)
+      - AWS Glue (preparação de dados)
+      - Amazon S3 (armazenamento)
+      - Amazon CloudWatch (monitoramento)
+
+---
+
+### Serviços para cada etapa do ciclo de vida
+
+#### 1 — Entendimento do problema
+
+Definir o objetivo de negócio, o que se quer prever ou automatizar
+
+##### Serviços Recomendados
+
+  - Amazon SageMaker Canvas (análise sem código)
+  - Amazon QuickSight (dashboard de insights)
+
+#### 2 — Coleta de dados
+
+Obter os dados de diversas fontes (bancos, arquivos, APIs)
+
+##### Serviços Recomendados
+
+  - Amazon S3 (armazenamento)
+  - AWS Glue (ETL)
+  - Amazon Kinesis (streaming)
+  - Amazon Redshift (data warehouse)
+
+#### 3 — Preparação de dados
+
+Limpeza, transformação, seleção e balanceamento dos dados
+
+##### Serviços Recomendados
+
+  - AWS Glue
+  - Amazon SageMaker Data Wrangler
+  - Amazon EMR (big data com Spark)
+
+#### 4 — Escolha e criação do modelo
+
+Escolher o algoritmo ou serviço de ML adequado
+
+##### Serviços Recomendados
+
+  - Amazon SageMaker (completo para ML/Deep Learning)
+  - Amazon SageMaker JumpStart (modelos prontos)
+
+#### 5 — Treinamento do modelo
+
+Ensinar o modelo com os dados (fase de aprendizado)
+
+##### Serviços Recomendados
+
+  - Amazon SageMaker Training
+  - AWS Batch (treinos em larga escala)
+
+#### 6 — Avaliação do modelo
+
+Verificar a qualidade do modelo (ex: acurácia, erro, F1 score)
+
+##### Serviços Recomendados
+
+  - Amazon SageMaker Experiments
+  - Amazon SageMaker Clarify (avaliar viés e explicabilidade)
+
+#### 7 — Implantação (Deploy)
+
+Colocar o modelo em produção (API, aplicativo ou sistema)
+
+##### Serviços Recomendados
+
+  - Amazon SageMaker Hosting
+  - AWS Lambda (execução sob demanda)
+  - Amazon API Gateway (exposição da API)
+
+#### 8 — Monitoramento e manutenção
+
+Acompanhar performance, detectar drift, re-treinar se necessário
+
+##### Serviços Recomendados
+
+  - Amazon SageMaker Model Monitor
+  - Amazon CloudWatch (métricas e logs)
+  - AWS CloudTrail (auditoria)
+
+---
+
+### Noções básicas de ética e viés algorítmico
+
+Ética em IA
+Refere-se ao conjunto de princípios e práticas responsáveis que guiam o desenvolvimento, uso e impacto da Inteligência Artificial na sociedade.
+
+Viés Algorítmico
+Ocorre quando um modelo de IA produz resultados injustos ou discriminatórios, geralmente porque foi treinado com dados parciais ou enviesados.
+
+#### Para que serve
+
+  - Evitar injustiças causadas por decisões automatizadas
+  - Aumentar a confiança dos usuários e do público na IA
+  - Atender a requisitos legais e regulatórios (como LGPD, GDPR)
+  - Criar modelos mais justos, transparentes e explicáveis
+
+#### Exemplos
+
+| Cenário | Tipo de Viés |
+|:------:|:------:|
+| Um modelo de contratação só seleciona homens | Viés de gênero |
+| Um sistema de crédito favorece apenas moradores de regiões ricas | Viés socioeconômico |
+| Reconhecimento facial tem erro maior para pessoas negras | Viés racial |
+
+#### Vantagens
+
+| Vantagem | Explicação |
+|:------:|:------:|
+| Inclusão | Garante que os modelos funcionem bem para todos os grupos |
+| Transparência | Facilita a explicação das decisões do modelo |
+| Confiança | Usuários confiam mais em sistemas responsáveis |
+| Compliance legal | Reduz riscos legais e regulatórios |
+| Desempenho mais realista | Modelos mais justos aprendem melhor com dados diversos |
+
+#### A AWS oferece ferramentas como
+
+  - Amazon SageMaker Clarify
+    - Detecta e corrige viés em dados e modelos
+  - Amazon SageMaker Model Monitor
+    - Acompanha desvios (drift) e comportamento em produção
+  - Documentação de uso responsável da IA 
+    - Práticas recomendadas
 
 ---
 
